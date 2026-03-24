@@ -11,6 +11,9 @@ public class GaussianFuzzySet extends FuzzySet {
 
     @Override
     public double membershipDegree(double x) {
+        if (sigma == 0.0) {
+            return x == mean ? 1.0 : 0.0;
+        }
         double d = x - mean;
         return Math.exp(-(d * d) / (2.0 * sigma * sigma));
     }

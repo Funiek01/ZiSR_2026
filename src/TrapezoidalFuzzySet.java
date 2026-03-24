@@ -15,14 +15,20 @@ public class TrapezoidalFuzzySet extends FuzzySet {
 
     @Override
     public double membershipDegree(double x) {
-        if (x <= a || x >= d) {
+        if (x < a || x > d) {
             return 0.0;
         }
         if (x >= b && x <= c) {
             return 1.0;
         }
         if (x < b) {
+            if (b == a) {
+                return 1.0;
+            }
             return (x - a) / (b - a);
+        }
+        if (d == c) {
+            return 1.0;
         }
         return (d - x) / (d - c);
     }
