@@ -3,6 +3,9 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+import fuzzlib.avers.Sum;
+import fuzzlib.norms.Norm;
+
 public class FuzzyClassifier {
 
     public static final String[] FEATURE_NAMES = {
@@ -12,6 +15,7 @@ public class FuzzyClassifier {
             "petal width"
     };
 
+    private final Norm scoreNorm = new Sum();
     private final Map<String, StatisticalFuzzySet[]> setsByClass = new LinkedHashMap<String, StatisticalFuzzySet[]>();
 
     public FuzzyClassifier(List<IrisSample> trainingSamples) {
@@ -56,7 +60,7 @@ public class FuzzyClassifier {
             StatisticalFuzzySet[] classSets = entry.getValue();
 
             for (int i = 0; i < classSets.length; i++) {
-                score += classSets[i].membershipDegree(features[i]);
+                score = scoreNorm.calc(score, classSets[i].membershipDegree(features[i]));
             }
 
             scores.put(entry.getKey(), score);
