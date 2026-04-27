@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+    <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="com.fss.MainDiabetesClassifier"/>
+    <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="FuzzyTest"/>
+    <stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="diabetes.data.csv"/>
+    <stringAttribute key="org.eclipse.jdt.launching.WORKING_DIRECTORY" value="${workspace_loc:FuzzyTest}"/>
+</launchConfiguration>
