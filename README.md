@@ -14,3 +14,10 @@ Run from IntelliJ or from command line:
 java -cp out\production\FuzzySets Main
 java -cp out\production\FuzzySets Main 5.1 3.5 1.4 0.2
 ```
+
+Fuzzy air conditioning controller:
+
+```powershell
+java -cp out\production\FuzzySets MainAirConditioning
+java -cp out\production\FuzzySets MainAirConditioning 27.0 22.0 75.0
+```
